@@ -15,7 +15,6 @@ namespace WpfApplication1
         /// Переменная обозначающая паузу
         /// </summary>
         public bool pause = false;
-
         /// <summary>
         /// Список слов
         /// </summary>

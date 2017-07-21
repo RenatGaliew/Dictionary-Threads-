@@ -69,7 +69,6 @@ namespace WpfApplication1
         {
             tbDirectoryName.Text = Directory.GetCurrentDirectory();
             Path = Directory.GetCurrentDirectory();
-
         }
 
         /// <summary>
@@ -135,9 +134,12 @@ namespace WpfApplication1
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            MyDict = new Dictionary(Path, FilesNames, MyMutex);
-            MyDict.Start();
-            //InitialWords(MyDict);
+            if (Directory.Exists(Path))
+            {
+                InitialFiles();
+                MyDict = new Dictionary(Path, FilesNames, MyMutex);
+                MyDict.Start();
+            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
